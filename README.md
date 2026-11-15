@@ -27,7 +27,3 @@ You can adjust chunk parameters directly at the top of `chunk_documents.py`:
 - `DATA_DIR = "data"`: input folder containing `.txt` files.
 - `OUTPUT_FILE = "output/chunks.json"`: path to save the output JSON.
 
-## Design Choices
-- **Overlap**: Keeps context connected across chunk borders so information isn't cut in half during semantic search (Task 2).
-- **Word boundaries**: Avoids splitting words mid-sentence for cleaner text embeddings.
-- **Metadata**: Each chunk includes its source document and start/end character offsets for citation in future tasks.
