@@ -1,29 +1,43 @@
-# PawPals Pet Care Knowledge Agent (Task 1)
+# PawPals Pet Care Knowledge Agent
 
-This repository contains Task 1 of the PawPals Pet Clinic knowledge agent project. It loads clinical pet care guidelines, cleans the text, and splits them into searchable chunks for the clinic's knowledge base.
+This repository contains the AI knowledge agent for PawPals Pet Clinic, developed across tasks.
 
-## What it does
-- Reads 6 pet care care sheets from the `data/` folder.
-- Normalizes spacing and line breaks.
-- Slices text into overlapping chunks while keeping words intact.
-- Saves the chunks and metadata into `output/chunks.json`.
+## Task 1: Knowledge Base Setup and Chunking
+- Reads 6 clinical pet care guides from `data/`.
+- Cleans and chunks the documents into overlapping segments (`CHUNK_SIZE=500`, `CHUNK_OVERLAP=100`).
+- Keeps words intact at boundaries and saves metadata to `output/chunks.json`.
 
-## Files
-- `data/` – Contains text files on dog vaccines, cat nutrition, dental health, emergency signs, flea/tick prevention, and puppy house training.
-- `chunk_documents.py` – Main script that reads, cleans, and chunks the files.
-- `output/chunks.json` – Generated structured output file.
-
-## How to Run
-Requires Python 3.8+ (uses standard library only):
-
+Run Task 1:
 ```bash
 python3 chunk_documents.py
 ```
 
-## Configuration
-You can adjust chunk parameters directly at the top of `chunk_documents.py`:
-- `CHUNK_SIZE = 500`: character length of each chunk.
-- `CHUNK_OVERLAP = 100`: character overlap between neighboring chunks.
-- `DATA_DIR = "data"`: input folder containing `.txt` files.
-- `OUTPUT_FILE = "output/chunks.json"`: path to save the output JSON.
+## Task 2: Vector Embeddings and Semantic Search
+- Generates vector representations for all chunks from Task 1 using TF-IDF feature extraction with unigrams and bigrams.
+- Implements cosine similarity search to retrieve the most relevant clinic passages for any user query.
+- Gracefully handles empty, whitespace-only, or invalid inputs.
+- Includes a test suite verifying search accuracy, ranking, and edge cases.
 
+### How to Run Semantic Search
+Run with sample clinic questions:
+```bash
+python3 semantic_search.py
+```
+
+Or pass your own question directly:
+```bash
+python3 semantic_search.py "When should puppies get their rabies vaccine?"
+```
+
+### Running Tests
+Run the unit test suite:
+```bash
+python3 test_search.py
+```
+
+## Project Files
+- `data/` – 6 pet care care sheets (vaccinations, cat nutrition, emergencies, dental care, fleas/ticks, puppy training).
+- `chunk_documents.py` – Ingestion and chunking script (Task 1).
+- `output/chunks.json` – Exported text chunks with source metadata.
+- `semantic_search.py` – Embedding generation and cosine similarity search tool (Task 2).
+- `test_search.py` – Unit tests verifying retrieval accuracy and empty input handling (Task 2).
