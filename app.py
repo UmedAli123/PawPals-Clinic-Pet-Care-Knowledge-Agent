@@ -89,12 +89,18 @@ HTML_TEMPLATE="""<!DOCTYPE html>
             box.style.display = "none";
 
             try {
-                const response = await fetch('/api/ask', {
+                const response = await fetch(window.location.pathname, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ query: query })
                 });
-                const data = await response.json();
+                const text = await response.text();
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (parseErr) {
+                    throw new Error("Server returned non-JSON response: " + text.slice(0, 120));
+                }
 
                 box.style.display = "block";
                 ans.innerText = data.answer || "No response received.";
@@ -106,7 +112,7 @@ HTML_TEMPLATE="""<!DOCTYPE html>
                 box.style.display = "block";
                 badge.className = "badge badge-error";
                 badge.innerText = "ERROR";
-                ans.innerText = "Error connecting to service: " + err.message;
+                ans.innerText = err.message;
                 src.innerText = "";
             } finally {
                 btn.disabled = false;
@@ -118,15 +124,6 @@ HTML_TEMPLATE="""<!DOCTYPE html>
 </html>
 """
 
-@app.route("/",methods=["GET"])
-@app.route("/app.py",methods=["GET"])
-@app.route("/api/index",methods=["GET"])
-def index():
-    return render_template_string(HTML_TEMPLATE)
-
-@app.route("/api/ask",methods=["GET","POST"])
-@app.route("/app.py/api/ask",methods=["GET","POST"])
-@app.route("/api/index/api/ask",methods=["GET","POST"])
 def ask():
     if request.method=="POST":
         data=request.get_json(silent=True) or {}
@@ -136,6 +133,14 @@ def ask():
 
     result=answer_question(query,vectorizer,matrix,chunks)
     return jsonify(result)
+
+@app.route("/",defaults={"path": ""},methods=["GET","POST"])
+@app.route("/<path:path>",methods=["GET","POST"])
+def catch_all(path=""):
+    # If POST or explicit ask endpoint, execute knowledge agent
+    if request.method=="POST" or "ask" in path or request.is_json:
+        return ask()
+    return render_template_string(HTML_TEMPLATE)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=int(os.environ.get("PORT",5000)),debug=True)
