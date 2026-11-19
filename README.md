@@ -73,7 +73,7 @@ python3 -m unittest discover -s . -p "test_*.py"
 ---
 
 ## Demo Recording
-- **Demo Video**: [Link to Screen Recording](https://github.com/UmedAli123/PawPals-Clinic-Pet-Care-Knowledge-Agent#demo-recording) *(record a 1-2 min screen demo of running `python3 agent.py` and paste link here)*
+- **Screen Recording Demonstration:** [Watch Demo Video (demo_recording.mp4)](./demo_recording.mp4)
 
 ---
 
