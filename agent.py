@@ -6,18 +6,22 @@ from datetime import datetime
 from semantic_search import load_chunks,build_vectorizer,search
 
 # Configuration settings
-LOG_FILE="agent.log"
-CHUNKS_FILE="output/chunks.json"
+BASE_DIR=os.path.dirname(os.path.abspath(__file__))
+LOG_FILE=os.path.join("/tmp","agent.log") if os.getenv("VERCEL") else os.path.join(BASE_DIR,"agent.log")
+CHUNKS_FILE=os.path.join(BASE_DIR,"output","chunks.json")
 DEFAULT_TOP_K=2
 MIN_SIMILARITY_SCORE=0.08
 
-# Setup logging configuration
-logging.basicConfig(
-    filename=LOG_FILE,
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
-)
+# Setup logging configuration safely
+try:
+    logging.basicConfig(
+        filename=LOG_FILE,
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+except Exception:
+    logging.basicConfig(level=logging.INFO)
 logger=logging.getLogger("PawPalsAgent")
 
 

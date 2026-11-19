@@ -10,7 +10,8 @@ load_env()
 app=Flask(__name__)
 
 # Initialize retrieval components once
-CHUNKS_FILE="output/chunks.json"
+BASE_DIR=os.path.dirname(os.path.abspath(__file__))
+CHUNKS_FILE=os.path.join(BASE_DIR,"output","chunks.json")
 chunks=load_chunks(CHUNKS_FILE)
 vectorizer,matrix=build_vectorizer(chunks)
 
@@ -118,10 +119,14 @@ HTML_TEMPLATE="""<!DOCTYPE html>
 """
 
 @app.route("/",methods=["GET"])
+@app.route("/app.py",methods=["GET"])
+@app.route("/api/index",methods=["GET"])
 def index():
     return render_template_string(HTML_TEMPLATE)
 
 @app.route("/api/ask",methods=["GET","POST"])
+@app.route("/app.py/api/ask",methods=["GET","POST"])
+@app.route("/api/index/api/ask",methods=["GET","POST"])
 def ask():
     if request.method=="POST":
         data=request.get_json(silent=True) or {}
