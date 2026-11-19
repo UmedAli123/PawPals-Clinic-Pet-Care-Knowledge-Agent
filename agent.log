@@ -1,0 +1,107 @@
+2026-11-19 22:57:41 [INFO] Incoming query: 'When should puppies receive their core vaccinations?'
+2026-11-19 22:57:41 [INFO] Retrieved 1 chunks from: dog_vaccination_schedule.txt
+2026-11-19 22:57:41 [INFO] Using local extractive fallback response.
+2026-11-19 22:57:41 [INFO] Incoming query: 'What human foods are toxic to cats?'
+2026-11-19 22:57:41 [INFO] Retrieved 2 chunks from: flea_tick_prevention.txt, cat_nutrition_guide.txt
+2026-11-19 22:57:41 [INFO] Using local extractive fallback response.
+2026-11-19 22:57:41 [INFO] Incoming query: 'How can I tell if my dog needs emergency care?'
+2026-11-19 22:57:41 [INFO] Retrieved 2 chunks from: pet_emergency_signs.txt
+2026-11-19 22:57:41 [INFO] Using local extractive fallback response.
+2026-11-19 22:57:41 [INFO] Incoming query: 'How do I fly a spaceship to Mars?'
+2026-11-19 22:57:41 [WARNING] No relevant chunks found for query: 'How do I fly a spaceship to Mars?'
+2026-11-19 22:58:37 [INFO] Incoming query: ''
+2026-11-19 22:58:37 [WARNING] Empty or invalid query received.
+2026-11-19 22:58:37 [INFO] Incoming query: '    '
+2026-11-19 22:58:37 [WARNING] Empty or invalid query received.
+2026-11-19 22:58:37 [INFO] Incoming query: 'How to repair an electric car battery in rain?'
+2026-11-19 22:58:37 [WARNING] No relevant chunks found for query: 'How to repair an electric car battery in rain?'
+2026-11-19 22:58:37 [INFO] Incoming query: 'puppy core vaccines and booster timeline'
+2026-11-19 22:58:37 [INFO] Retrieved 2 chunks from: dog_vaccination_schedule.txt
+2026-11-19 22:58:37 [INFO] Using local extractive fallback response.
+2026-11-19 23:00:21 [INFO] Incoming query: ''
+2026-11-19 23:00:21 [WARNING] Empty or invalid query received.
+2026-11-19 23:00:21 [INFO] Incoming query: '    '
+2026-11-19 23:00:21 [WARNING] Empty or invalid query received.
+2026-11-19 23:00:21 [INFO] Incoming query: 'How to repair an electric car battery in rain?'
+2026-11-19 23:00:21 [WARNING] No relevant chunks found for query: 'How to repair an electric car battery in rain?'
+2026-11-19 23:00:21 [INFO] Incoming query: 'puppy core vaccines and booster timeline'
+2026-11-19 23:00:21 [INFO] Retrieved 2 chunks from: dog_vaccination_schedule.txt
+2026-11-19 23:00:21 [INFO] Using local extractive fallback response.
+2026-11-19 23:08:36 [INFO] Incoming query: 'When should puppies receive their core vaccinations?'
+2026-11-19 23:08:36 [INFO] Retrieved 1 chunks from: dog_vaccination_schedule.txt
+2026-11-19 23:08:36 [INFO] Generating answer using groq...
+2026-11-19 23:08:36 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-11-19 23:08:36 [ERROR] API call to groq failed: Request to POST /openai/v1/chat/completions on api.groq.com not allowed by policy
+2026-11-19 23:08:36 [INFO] Using local extractive fallback response.
+2026-11-19 23:08:36 [INFO] Incoming query: 'What human foods are toxic to cats?'
+2026-11-19 23:08:36 [INFO] Retrieved 2 chunks from: flea_tick_prevention.txt, cat_nutrition_guide.txt
+2026-11-19 23:08:36 [INFO] Generating answer using groq...
+2026-11-19 23:08:36 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-11-19 23:08:36 [ERROR] API call to groq failed: Request to POST /openai/v1/chat/completions on api.groq.com not allowed by policy
+2026-11-19 23:08:36 [INFO] Using local extractive fallback response.
+2026-11-19 23:08:36 [INFO] Incoming query: 'How can I tell if my dog needs emergency care?'
+2026-11-19 23:08:36 [INFO] Retrieved 2 chunks from: pet_emergency_signs.txt
+2026-11-19 23:08:36 [INFO] Generating answer using groq...
+2026-11-19 23:08:36 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-11-19 23:08:36 [ERROR] API call to groq failed: Request to POST /openai/v1/chat/completions on api.groq.com not allowed by policy
+2026-11-19 23:08:36 [INFO] Using local extractive fallback response.
+2026-11-19 23:08:36 [INFO] Incoming query: 'How do I fly a spaceship to Mars?'
+2026-11-19 23:08:36 [WARNING] No relevant chunks found for query: 'How do I fly a spaceship to Mars?'
+2026-11-19 23:08:36 [INFO] Incoming query: 'When should puppies get their first shots?'
+2026-11-19 23:08:36 [INFO] Retrieved 2 chunks from: puppy_house_training.txt, dog_vaccination_schedule.txt
+2026-11-19 23:08:36 [INFO] Generating answer using groq...
+2026-11-19 23:08:36 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-11-19 23:08:36 [ERROR] API call to groq failed: Request to POST /openai/v1/chat/completions on api.groq.com not allowed by policy
+2026-11-19 23:08:36 [INFO] Using local extractive fallback response.
+2026-11-19 23:09:27 [INFO] Incoming query: 'When should puppies receive their core vaccinations?'
+2026-11-19 23:09:27 [INFO] Retrieved 1 chunks from: dog_vaccination_schedule.txt
+2026-11-19 23:09:27 [INFO] Generating answer using groq...
+2026-11-19 23:09:28 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-11-19 23:09:28 [ERROR] API call to groq failed: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+2026-11-19 23:09:28 [INFO] Using local extractive fallback response.
+2026-11-19 23:09:28 [INFO] Incoming query: 'What human foods are toxic to cats?'
+2026-11-19 23:09:28 [INFO] Retrieved 2 chunks from: flea_tick_prevention.txt, cat_nutrition_guide.txt
+2026-11-19 23:09:28 [INFO] Generating answer using groq...
+2026-11-19 23:09:29 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-11-19 23:09:29 [ERROR] API call to groq failed: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+2026-11-19 23:09:29 [INFO] Using local extractive fallback response.
+2026-11-19 23:09:29 [INFO] Incoming query: 'How can I tell if my dog needs emergency care?'
+2026-11-19 23:09:29 [INFO] Retrieved 2 chunks from: pet_emergency_signs.txt
+2026-11-19 23:09:29 [INFO] Generating answer using groq...
+2026-11-19 23:09:31 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-11-19 23:09:31 [ERROR] API call to groq failed: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+2026-11-19 23:09:31 [INFO] Using local extractive fallback response.
+2026-11-19 23:09:31 [INFO] Incoming query: 'How do I fly a spaceship to Mars?'
+2026-11-19 23:09:31 [WARNING] No relevant chunks found for query: 'How do I fly a spaceship to Mars?'
+2026-11-19 23:09:31 [INFO] Incoming query: 'When should puppies get their first shots?'
+2026-11-19 23:09:31 [INFO] Retrieved 2 chunks from: puppy_house_training.txt, dog_vaccination_schedule.txt
+2026-11-19 23:09:31 [INFO] Generating answer using groq...
+2026-11-19 23:09:34 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-11-19 23:09:34 [ERROR] API call to groq failed: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+2026-11-19 23:09:34 [INFO] Using local extractive fallback response.
+2026-11-19 23:10:18 [INFO] HTTP Request: GET https://api.groq.com/openai/v1/models "HTTP/1.1 200 OK"
+2026-11-19 23:10:43 [INFO] HTTP Request: GET https://api.groq.com/openai/v1/models "HTTP/1.1 200 OK"
+2026-11-19 23:11:11 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 23:12:18 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 23:13:27 [INFO] Incoming query: 'When should puppies receive their core vaccinations?'
+2026-11-19 23:13:27 [INFO] Retrieved 1 chunks from: dog_vaccination_schedule.txt
+2026-11-19 23:13:28 [INFO] Generating answer using groq...
+2026-11-19 23:13:29 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 23:13:29 [INFO] Answer generated successfully.
+2026-11-19 23:13:29 [INFO] Incoming query: 'What human foods are toxic to cats?'
+2026-11-19 23:13:29 [INFO] Retrieved 2 chunks from: flea_tick_prevention.txt, cat_nutrition_guide.txt
+2026-11-19 23:13:29 [INFO] Generating answer using groq...
+2026-11-19 23:13:30 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 23:13:30 [INFO] Answer generated successfully.
+2026-11-19 23:13:30 [INFO] Incoming query: 'How can I tell if my dog needs emergency care?'
+2026-11-19 23:13:30 [INFO] Retrieved 2 chunks from: pet_emergency_signs.txt
+2026-11-19 23:13:30 [INFO] Generating answer using groq...
+2026-11-19 23:13:31 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 23:13:31 [INFO] Answer generated successfully.
+2026-11-19 23:13:31 [INFO] Incoming query: 'How do I fly a spaceship to Mars?'
+2026-11-19 23:13:31 [WARNING] No relevant chunks found for query: 'How do I fly a spaceship to Mars?'
+2026-11-19 23:13:31 [INFO] Incoming query: 'When should puppies get their first shots?'
+2026-11-19 23:13:31 [INFO] Retrieved 2 chunks from: puppy_house_training.txt, dog_vaccination_schedule.txt
+2026-11-19 23:13:31 [INFO] Generating answer using groq...
+2026-11-19 23:13:32 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 23:13:32 [INFO] Answer generated successfully.
